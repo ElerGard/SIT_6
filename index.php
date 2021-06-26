@@ -27,9 +27,9 @@ else {
             $Date = date("Y-m-d");
 
             if (!empty($message)) {
-                $InsertMessageQuery = "Insert Into messages(login, message, date_) Values(?, ?, ?)";
-                $InsertMessageStatement = $conn->prepare($InsertMessageQuery);
-                $InsertMessageStatement->execute(array($login, $message, $Date));
+                $newMessage = "Insert Into messages(login, message, date_) Values(?, ?, ?)";
+                $addMessage = $conn->prepare($newMessage);
+                $addMessage->execute(array($login, $message, $Date));
             }
         } else {
             echo "You are not log in</br>All messages:</br>";
